@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-		withMaven {
+		maven {
 		    sh 'cd test'
 		    sh 'mvn clean test' 
 		}
