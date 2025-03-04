@@ -1,15 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Build') { 
+        stage('Test') { 
             steps {
-		maven {
-		    sh 'cd test'
-		    sh 'mvn clean test' 
-		}
+		sh 'cd test'
+                sh 'mvn clean test' 
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml' 
+                }
             }
         }
     }
 }
-
-
