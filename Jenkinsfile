@@ -4,6 +4,10 @@ pipeline {
         stage('Install deps') {
             steps {
                 sh '''
+                    # Install required packages
+                    sudo apt update
+                    sudo apt install -y wget unzip curl
+
                     # Install Google Chrome if not installed
                     if ! command -v google-chrome &> /dev/null
                     then
@@ -16,7 +20,7 @@ pipeline {
                     # Install ChromeDriver
                     CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
                     wget -N "https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip"
-                    unzip chromedriver_linux64.zip
+                    unzip -o chromedriver_linux64.zip
                     chmod +x chromedriver
                     sudo mv chromedriver /usr/local/bin/
                 '''
