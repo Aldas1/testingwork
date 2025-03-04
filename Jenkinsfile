@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'maven:3.9.6-eclipse-temurin-17' }
-    }
+    agent any
     stages {
         stage('Install deps') {
             steps {
@@ -30,6 +28,8 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'mkdir /tmp/chromedriver'
+                sh 'cp chromedriver /tmp/chromedriver'
                 sh 'mvn -f test/pom.xml clean test'
             }
             post {
