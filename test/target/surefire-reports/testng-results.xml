@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-04T23:04:00 EET" name="Surefire suite" finished-at="2025-03-04T23:04:26 EET" duration-ms="26108">
+    <groups>
+    </groups>
+    <test started-at="2025-03-04T23:04:00 EET" name="Surefire test" finished-at="2025-03-04T23:04:26 EET" duration-ms="26108">
+      <class name="test.TreciaUzd">
+        <test-method is-config="true" signature="setupChromeDriver()[pri:0, instance:test.TreciaUzd@258e2e41]" started-at="2025-03-04T23:04:00 EET" name="setupChromeDriver" finished-at="2025-03-04T23:04:00 EET" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupChromeDriver -->
+        <test-method is-config="true" signature="createNewUser()[pri:0, instance:test.TreciaUzd@258e2e41]" started-at="2025-03-04T23:04:00 EET" name="createNewUser" finished-at="2025-03-04T23:04:04 EET" duration-ms="4503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewUser -->
+        <test-method is-config="true" signature="loginBeforeTest()[pri:0, instance:test.TreciaUzd@258e2e41]" started-at="2025-03-04T23:04:04 EET" name="loginBeforeTest" finished-at="2025-03-04T23:04:07 EET" duration-ms="2464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginBeforeTest -->
+        <test-method signature="testPurchaseFromData1()[pri:1, instance:test.TreciaUzd@258e2e41]" started-at="2025-03-04T23:04:07 EET" name="testPurchaseFromData1" finished-at="2025-03-04T23:04:15 EET" duration-ms="7994" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPurchaseFromData1 -->
+        <test-method is-config="true" signature="tearDownDriver()[pri:0, instance:test.TreciaUzd@258e2e41]" started-at="2025-03-04T23:04:15 EET" name="tearDownDriver" finished-at="2025-03-04T23:04:15 EET" duration-ms="68" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownDriver -->
+        <test-method is-config="true" signature="loginBeforeTest()[pri:0, instance:test.TreciaUzd@258e2e41]" started-at="2025-03-04T23:04:15 EET" name="loginBeforeTest" finished-at="2025-03-04T23:04:17 EET" duration-ms="2349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginBeforeTest -->
+        <test-method signature="testPurchaseFromData2()[pri:2, instance:test.TreciaUzd@258e2e41]" started-at="2025-03-04T23:04:17 EET" name="testPurchaseFromData2" finished-at="2025-03-04T23:04:26 EET" duration-ms="8647" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPurchaseFromData2 -->
+        <test-method is-config="true" signature="tearDownDriver()[pri:0, instance:test.TreciaUzd@258e2e41]" started-at="2025-03-04T23:04:26 EET" name="tearDownDriver" finished-at="2025-03-04T23:04:26 EET" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownDriver -->
+      </class> <!-- test.TreciaUzd -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
