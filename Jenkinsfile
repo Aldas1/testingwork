@@ -3,8 +3,6 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'mkdir /tmp/chromedriver'
-                sh 'cp chromedriver /tmp/chromedriver'
                 sh 'mvn -f test/pom.xml clean test'
             }
             post {

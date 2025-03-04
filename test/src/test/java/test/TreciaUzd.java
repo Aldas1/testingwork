@@ -33,7 +33,7 @@ public class TreciaUzd {
     @BeforeSuite
     public void setupChromeDriver() {
         // Set up ChromeDriver path
-    	System.setProperty("webdriver.chrome.driver", "/tmp/chromedriver/chromedriver");
+    	System.setProperty("webdriver.chrome.driver", "/home/jenkins/agent/workspace/maven/chromedriver");
         
         // Optional Chrome options
     	ChromeOptions options = new ChromeOptions();
