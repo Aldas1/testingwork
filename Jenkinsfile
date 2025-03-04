@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+                sh 'apt update'
                 sh 'mvn -f test/pom.xml clean test'
             }
             post {
