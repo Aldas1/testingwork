@@ -8,17 +8,18 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     wget unzip curl xvfb gnupg \
     && rm -rf /var/lib/apt/lists/*
+ENV CHROMEDRIVER_VERSION=120.0.6099.71
 
-# Install Google Chrome
-RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor > /usr/share/keyrings/google-chrome.gpg && \
-    echo "deb [signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google-chrome.list && \
-    apt-get update && apt-get install -y google-chrome-stable
+### install chrome
+RUN apt-get update && apt-get install -y wget && apt-get install -y zip
+RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
 
-# Install ChromeDriver (Fixed)
-RUN wget -q "https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.35/linux64/chromedriver-linux64.zip" -O chromedriver.zip && \
-    unzip chromedriver.zip -d /usr/local/bin/ && \
-    rm chromedriver.zip && chmod +x /usr/local/bin/chromedriver-linux64
-# Set environment variable for headless display
+### install chromedriver
+RUN wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROMEDRIVER_VERSION/linux64/chromedriver-linux64.zip \
+  && unzip chromedriver-linux64.zip && rm -dfr chromedriver_linux64.zip \
+  && mv /chromedriver-linux64/chromedriver /usr/bin/chromedriver \
+  && chmod +x /usr/bin/chromedriver
 ENV DISPLAY=:99
 
 # Copy project files
