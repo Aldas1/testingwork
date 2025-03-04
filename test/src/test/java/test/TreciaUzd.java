@@ -37,7 +37,9 @@ public class TreciaUzd {
         
         // Optional Chrome options
     	ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Headless mode (new improves stability)
+        options.addArguments("--headless=new"); // New headless mode
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage"); 
 
 
         driver = new ChromeDriver(options);
