@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Test') { 
             steps {
-		sh 'cd test'
-                sh 'mvn clean test' 
+                sh 'mvn -f test/pom.xml clean test' 
             }
             post {
                 always {
