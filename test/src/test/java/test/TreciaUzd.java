@@ -33,22 +33,12 @@ public class TreciaUzd {
     @BeforeSuite
     public void setupChromeDriver() {
         // Set up ChromeDriver path
-    	System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver-linux64/chromedriver");
+    	System.setProperty("webdriver.chrome.driver", "/tmp/chromedriver/chromedriver");
         
         // Optional Chrome options
     	ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox"); // Important for Docker
-        options.addArguments("--disable-dev-shm-usage"); // Prevent crashes in Docker
-        options.addArguments("--headless=new"); // Headless mode (new improves stability)
-        options.addArguments("--disable-gpu"); // Disable GPU acceleration
-        options.addArguments("--remote-debugging-port=9222"); // Avoid conflicts
-        options.addArguments("--disable-extensions"); // Prevent extension conflicts
-        options.addArguments("--incognito"); // Force fresh profile every run
-        options.addArguments("--disable-popup-blocking"); // Prevent issues with pop-ups
+        options.addArguments("--headless"); // Headless mode (new improves stability)
 
-        // Unique user-data directory per test run (fixes the issue)
-        String userDataDir = "/tmp/chrome-user-data-" + System.currentTimeMillis();
-        options.addArguments("--user-data-dir=" + userDataDir);
 
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
